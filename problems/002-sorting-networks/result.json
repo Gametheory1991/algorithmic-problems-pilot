@@ -1,0 +1,327 @@
+{
+  "all_comparators_necessary": true,
+  "comparator_count": 19,
+  "full_network": {
+    "failing_inputs": 0,
+    "inputs_tested": 256,
+    "sorts_all_binary_inputs": true
+  },
+  "necessary_count": 19,
+  "network": {
+    "comparator_count": 19,
+    "comparators": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "inputs": 8,
+    "name": "Batcher odd-even mergesort network, 8 inputs"
+  },
+  "problem": 2,
+  "removals": [
+    {
+      "comparator": [
+        0,
+        1
+      ],
+      "comparator_number": 1,
+      "failing_inputs": 16,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00000010",
+      "smallest_counterexample": "10000000"
+    },
+    {
+      "comparator": [
+        2,
+        3
+      ],
+      "comparator_number": 2,
+      "failing_inputs": 16,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00000010",
+      "smallest_counterexample": "00100000"
+    },
+    {
+      "comparator": [
+        0,
+        2
+      ],
+      "comparator_number": 3,
+      "failing_inputs": 22,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00001001",
+      "smallest_counterexample": "11000000"
+    },
+    {
+      "comparator": [
+        1,
+        3
+      ],
+      "comparator_number": 4,
+      "failing_inputs": 22,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00000010",
+      "smallest_counterexample": "01000000"
+    },
+    {
+      "comparator": [
+        1,
+        2
+      ],
+      "comparator_number": 5,
+      "failing_inputs": 32,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00001011",
+      "smallest_counterexample": "01010001"
+    },
+    {
+      "comparator": [
+        4,
+        5
+      ],
+      "comparator_number": 6,
+      "failing_inputs": 16,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00000010",
+      "smallest_counterexample": "00001000"
+    },
+    {
+      "comparator": [
+        6,
+        7
+      ],
+      "comparator_number": 7,
+      "failing_inputs": 16,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00000010",
+      "smallest_counterexample": "00000010"
+    },
+    {
+      "comparator": [
+        4,
+        6
+      ],
+      "comparator_number": 8,
+      "failing_inputs": 22,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00001001",
+      "smallest_counterexample": "00001100"
+    },
+    {
+      "comparator": [
+        5,
+        7
+      ],
+      "comparator_number": 9,
+      "failing_inputs": 22,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00000010",
+      "smallest_counterexample": "00000100"
+    },
+    {
+      "comparator": [
+        5,
+        6
+      ],
+      "comparator_number": 10,
+      "failing_inputs": 32,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00001011",
+      "smallest_counterexample": "00010101"
+    },
+    {
+      "comparator": [
+        0,
+        4
+      ],
+      "comparator_number": 11,
+      "failing_inputs": 15,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "10000111",
+      "smallest_counterexample": "11110000"
+    },
+    {
+      "comparator": [
+        2,
+        6
+      ],
+      "comparator_number": 12,
+      "failing_inputs": 55,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00001001",
+      "smallest_counterexample": "00110000"
+    },
+    {
+      "comparator": [
+        2,
+        4
+      ],
+      "comparator_number": 13,
+      "failing_inputs": 100,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00100111",
+      "smallest_counterexample": "00110011"
+    },
+    {
+      "comparator": [
+        1,
+        5
+      ],
+      "comparator_number": 14,
+      "failing_inputs": 55,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00100011",
+      "smallest_counterexample": "01110000"
+    },
+    {
+      "comparator": [
+        3,
+        7
+      ],
+      "comparator_number": 15,
+      "failing_inputs": 15,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00000010",
+      "smallest_counterexample": "00010000"
+    },
+    {
+      "comparator": [
+        3,
+        5
+      ],
+      "comparator_number": 16,
+      "failing_inputs": 100,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00001001",
+      "smallest_counterexample": "00010001"
+    },
+    {
+      "comparator": [
+        1,
+        2
+      ],
+      "comparator_number": 17,
+      "failing_inputs": 16,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "01011111",
+      "smallest_counterexample": "01110111"
+    },
+    {
+      "comparator": [
+        3,
+        4
+      ],
+      "comparator_number": 18,
+      "failing_inputs": 32,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00010111",
+      "smallest_counterexample": "00010111"
+    },
+    {
+      "comparator": [
+        5,
+        6
+      ],
+      "comparator_number": 19,
+      "failing_inputs": 16,
+      "inputs_tested": 256,
+      "necessary": true,
+      "output_on_counterexample": "00000101",
+      "smallest_counterexample": "00010001"
+    }
+  ],
+  "spec": "n=8 wires; 19 comparators; 256 binary inputs enumerated with wire 0 as most significant bit; counterexample = first failing input in that order",
+  "title": "Sorting networks - can a comparator be removed?",
+  "verifier": "zero-one principle: exhaustive check over all 256 binary inputs for the full network and for each of the 19 single-comparator removals"
+}
