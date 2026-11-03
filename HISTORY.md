@@ -10,4 +10,11 @@
 - Problems 2 to 10 are published as registrations only. No result is claimed
   for them.
 
+## 2 November 2026 — Problem 2 published
+
+- Problem 2 (sorting networks) was run and verified, and its manuscript, code,
+  and result file were published.
+- Problems 3 to 10 remain published as registrations only. No result is claimed
+  for them.
+
 No results have been corrected or withdrawn.

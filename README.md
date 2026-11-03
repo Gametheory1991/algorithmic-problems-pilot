@@ -14,14 +14,14 @@ the author's own work and opinions only.
 
 ## Catalogue
 
-The pilot registers ten problems. One problem has been run and verified. Nine
+The pilot registers ten problems. Two problems have been run and verified. Eight
 problems are registered with their verification methods stated and have not been
 run.
 
 | No. | Problem | Status | Verification method |
 |-----|---------|--------|---------------------|
 | 1 | Bin packing: First-Fit Decreasing against the exact optimum | Run and verified | Exhaustive subset dynamic programming; both packings validated item by item |
-| 2 | Sorting networks: necessity of each comparator in the 8-input network | Registered, not run | Exhaustive check over all 256 binary inputs (zero-one principle) |
+| 2 | Sorting networks: necessity of each comparator in the 8-input network | Run and verified | Exhaustive check over all 256 binary inputs (zero-one principle) |
 | 3 | Scheduling: Smith's rule, and its smallest failure case with release dates | Registered, not run | Exhaustive check over all permutations for n ≤ 8 |
 | 4 | Travelling salesman: heuristic distance from the known optimum on TSPLIB eil51 | Registered, not run | Published optimum of 426; tour validity and length recomputed independently |
 | 5 | Optimal stopping: exact threshold for the secretary problem | Registered, not run | Exact dynamic programming against 200,000-trial Monte Carlo simulation, fixed seed |
@@ -33,7 +33,7 @@ run.
 
 The full registration text for all ten problems is in [PILOT.md](PILOT.md).
 
-## Verified result
+## Verified results
 
 Problem 1 has been completed. In 200 synthetic bin-packing instances generated on
 1 November 2026 (bin capacity 100, 12 items per instance, item sizes drawn uniformly
@@ -42,6 +42,16 @@ than the proven optimum in 30 instances, which is 15 percent of the sample. The
 maximum gap was 1 bin and the mean gap was 0.15 bins. The manuscript, the code, and
 the machine-readable result are in
 [problems/001-bin-packing](problems/001-bin-packing/).
+
+Problem 2 has been completed. The 8-input sorting network produced by Batcher's
+odd-even mergesort construction has 19 comparators. Run on 2 November 2026 under
+the registered verifier (the zero-one principle, applied exhaustively), the full
+network sorted all 256 binary inputs with no failures, and each of the 19
+single-comparator removals failed on at least one input, so every comparator is
+necessary. In total 5,120 cases were checked (20 networks × 256 inputs); 620 of
+the 4,864 removal cases (12.7 percent) produced an unsorted output. The
+manuscript, the code, and the machine-readable result are in
+[problems/002-sorting-networks](problems/002-sorting-networks/).
 
 ## How results are produced and corrected
 

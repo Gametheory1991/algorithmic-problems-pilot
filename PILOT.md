@@ -11,7 +11,7 @@ machine-checkable verifier fixed BEFORE the run (pre-registered).
    Verifier: subset dynamic programming gives the provable optimum; both packings validated item-by-item.
    Data: synthetic, capacity 100, 12 items, uniform 15–60, 200 seeded instances.
 
-2. **Sorting networks — can a comparator be removed?**
+2. **Sorting networks — can a comparator be removed? (completed and verified 2026-11-02)**
    Question: Take the known 8-input, 19-comparator network; is every comparator necessary?
    Verifier: zero-one principle — exhaustive check over all 256 binary inputs for the full network and for each single-comparator removal, with a concrete failing input as counterexample.
 
