@@ -1,0 +1,159 @@
+{
+  "part_a_no_release_dates": {
+    "dp_agrees_with_brute_force_on_all": true,
+    "sets": [
+      {
+        "dp_bruteforce_disagreements": [],
+        "labelled_instances_represented": 597870,
+        "multisets_checked": 5004,
+        "n_range": [
+          1,
+          6
+        ],
+        "name": "set1_p_w_in_1_2_3",
+        "smith_failures": [],
+        "values": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "dp_bruteforce_disagreements": [],
+        "labelled_instances_represented": 87380,
+        "multisets_checked": 494,
+        "n_range": [
+          1,
+          8
+        ],
+        "name": "set2_p_w_in_1_2",
+        "smith_failures": [],
+        "values": [
+          1,
+          2
+        ]
+      }
+    ],
+    "smith_optimal_on_all_checked": true,
+    "total_labelled_instances_represented": 685250,
+    "total_multisets_checked": 5498
+  },
+  "part_b_release_dates": {
+    "n1": {
+      "bound": 3,
+      "failures": 0,
+      "instances_checked": 36
+    },
+    "n2_smallest_counterexample": {
+      "bound": 2,
+      "gap": 2,
+      "instances_examined_up_to_and_including": 8,
+      "jobs": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          2,
+          1
+        ]
+      ],
+      "optimal": 5,
+      "optimal_order": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          2,
+          1
+        ]
+      ],
+      "optimal_schedule": [
+        {
+          "completion": 1,
+          "job": [
+            1,
+            1,
+            0
+          ],
+          "start": 0
+        },
+        {
+          "completion": 2,
+          "job": [
+            1,
+            2,
+            1
+          ],
+          "start": 1
+        }
+      ],
+      "priority_variant_on_this_instance": {
+        "note": "informational only; outside the registered verifier",
+        "objective": 5,
+        "schedule": [
+          {
+            "completion": 1,
+            "job": [
+              1,
+              1,
+              0
+            ],
+            "start": 0
+          },
+          {
+            "completion": 2,
+            "job": [
+              1,
+              2,
+              1
+            ],
+            "start": 1
+          }
+        ]
+      },
+      "smith": 7,
+      "smith_order": [
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "smith_schedule": [
+        {
+          "completion": 2,
+          "job": [
+            1,
+            2,
+            1
+          ],
+          "start": 1
+        },
+        {
+          "completion": 3,
+          "job": [
+            1,
+            1,
+            0
+          ],
+          "start": 2
+        }
+      ]
+    }
+  },
+  "problem": 3,
+  "title": "Scheduling - Smith's rule, and where it breaks",
+  "verdict": "Smith's rule matched the brute-force optimum on every checked instance without release dates, and the stated n = 2 instance is the smallest counterexample in the registered enumeration once release dates are added.",
+  "verifier": "brute force over all permutations for n <= 8; subset dynamic programming as an independent cross-check of the optimum"
+}
