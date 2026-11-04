@@ -15,15 +15,15 @@ machine-checkable verifier fixed BEFORE the run (pre-registered).
    Question: Take the known 8-input, 19-comparator network; is every comparator necessary?
    Verifier: zero-one principle — exhaustive check over all 256 binary inputs for the full network and for each single-comparator removal, with a concrete failing input as counterexample.
 
-3. **Scheduling — Smith's rule, and where it breaks**
+3. **Scheduling — Smith's rule, and where it breaks (completed and verified 2026-11-03)**
    Question: Smith's rule (order by ratio) is claimed optimal for minimising weighted completion time with no release dates. Verify exhaustively for all small instances, then find the smallest counterexample once release dates are added.
    Verifier: brute force over all permutations for n ≤ 8.
 
-4. **Travelling salesman — heuristic gap on a public benchmark**
+4. **Travelling salesman — heuristic gap on a public benchmark (completed and verified 2026-11-03)**
    Question: How close do nearest-neighbour + 2-opt get to the known optimum on the public TSPLIB eil51 instance (known optimum 426)?
    Verifier: published optimum; tour length recomputed independently, tour validity checked (every city once).
 
-5. **Optimal stopping — prophet / secretary threshold**
+5. **Optimal stopping — prophet / secretary threshold (completed and verified 2026-11-03)**
    Question: What is the exact optimal threshold policy for the classic secretary problem at n = 10, 50, 100?
    Verifier: exact dynamic programming value vs 200,000-trial Monte Carlo simulation, fixed seed — the two must agree within simulation error.
 

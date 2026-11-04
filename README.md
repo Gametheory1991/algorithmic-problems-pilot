@@ -14,7 +14,7 @@ the author's own work and opinions only.
 
 ## Catalogue
 
-The pilot registers ten problems. Two problems have been run and verified. Eight
+The pilot registers ten problems. Five problems have been run and verified. Five
 problems are registered with their verification methods stated and have not been
 run.
 
@@ -22,9 +22,9 @@ run.
 |-----|---------|--------|---------------------|
 | 1 | Bin packing: First-Fit Decreasing against the exact optimum | Run and verified | Exhaustive subset dynamic programming; both packings validated item by item |
 | 2 | Sorting networks: necessity of each comparator in the 8-input network | Run and verified | Exhaustive check over all 256 binary inputs (zero-one principle) |
-| 3 | Scheduling: Smith's rule, and its smallest failure case with release dates | Registered, not run | Exhaustive check over all permutations for n ≤ 8 |
-| 4 | Travelling salesman: heuristic distance from the known optimum on TSPLIB eil51 | Registered, not run | Published optimum of 426; tour validity and length recomputed independently |
-| 5 | Optimal stopping: exact threshold for the secretary problem | Registered, not run | Exact dynamic programming against 200,000-trial Monte Carlo simulation, fixed seed |
+| 3 | Scheduling: Smith's rule, and its smallest failure case with release dates | Run and verified | Exhaustive check over all permutations for n ≤ 8 |
+| 4 | Travelling salesman: heuristic distance from the known optimum on TSPLIB eil51 | Run and verified | Published optimum of 426; tour validity and length recomputed independently |
+| 5 | Optimal stopping: exact threshold for the secretary problem | Run and verified | Exact dynamic programming against 200,000-trial Monte Carlo simulation, fixed seed |
 | 6 | Multi-armed bandits: regret of UCB1, Thompson Sampling, and epsilon-greedy | Registered, not run | Synthetic arms; true best arm known by construction |
 | 7 | Optimal execution: closed-form trajectory against a searched policy, synthetic market | Registered, not run | 100,000 seeded simulated price paths, common random numbers |
 | 8 | Coin systems: conditions under which the greedy algorithm is optimal | Registered, not run | Exact dynamic programming at every amount up to 200 |
@@ -52,6 +52,44 @@ necessary. In total 5,120 cases were checked (20 networks × 256 inputs); 620 of
 the 4,864 removal cases (12.7 percent) produced an unsorted output. The
 manuscript, the code, and the machine-readable result are in
 [problems/002-sorting-networks](problems/002-sorting-networks/).
+
+Problem 3 has been completed. Without release dates, Smith's rule (ordering
+jobs by non-decreasing ratio of processing time to weight) matched the
+brute-force optimum on every instance checked exhaustively on 3 November 2026:
+5,498 job multisets representing 685,250 labelled instances, covering all
+processing times and weights in {1, 2, 3} up to 6 jobs and all in {1, 2} up to
+8 jobs, with a subset dynamic program agreeing with the brute-force optimum
+throughout. With release dates added, the smallest counterexample to the
+static ratio order, in the enumeration registered in advance, has two jobs of
+processing time 1 — weights 1 and 2, release dates 0 and 1 — on which the
+ratio order scores 7 against an optimum of 5, because it leaves the machine
+idle waiting for the higher-priority job while a released job waits. The
+manuscript, the code, and the machine-readable result are in
+[problems/003-scheduling](problems/003-scheduling/).
+
+Problem 4 has been completed. On the public TSPLIB eil51 instance (published
+optimum 426), nearest neighbour from city 1, run on 3 November 2026, produced
+a tour of length 511, and best-improvement 2-opt reduced it to 435, which is
+9 above the optimum, or 2.11 percent. Run from all 51 start cities, nearest
+neighbour ended between 482 and 563 and 2-opt ended between 429 and 449, with
+no start reaching the optimum. Every reported tour was validated as a
+permutation of the 51 cities, its length recomputed by a second
+implementation, and its final form checked to admit no improving 2-opt
+reversal. The manuscript, the code, and the machine-readable result are in
+[problems/004-tsp](problems/004-tsp/).
+
+Problem 5 has been completed. For the classic secretary problem, the exact
+optimal policy, computed by dynamic programming in rational arithmetic on
+3 November 2026, is to observe the first 3 of 10, 18 of 50, and 37 of 100
+candidates and then hire the first who is the best seen so far, with exact
+success probabilities 0.398690 (the fraction 3349/8400), 0.374275, and
+0.371043 respectively. The classical threshold formula, maximised over all
+thresholds in exact arithmetic, reproduced the dynamic-programming value and
+threshold at each n, and a 200,000-trial Monte Carlo simulation of the policy
+at each n (fixed seed 20261103) agreed with the exact value within 1.43
+standard errors or less, inside the registered three-standard-error band.
+The manuscript, the code, and the machine-readable result are in
+[problems/005-optimal-stopping](problems/005-optimal-stopping/).
 
 ## How results are produced and corrected
 
