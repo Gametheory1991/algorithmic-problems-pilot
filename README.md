@@ -14,9 +14,8 @@ the author's own work and opinions only.
 
 ## Catalogue
 
-The pilot registers ten problems. Five problems have been run and verified. Five
-problems are registered with their verification methods stated and have not been
-run.
+The pilot registers ten problems. All ten problems have now been run and
+verified under their registered verification methods.
 
 | No. | Problem | Status | Verification method |
 |-----|---------|--------|---------------------|
@@ -25,11 +24,11 @@ run.
 | 3 | Scheduling: Smith's rule, and its smallest failure case with release dates | Run and verified | Exhaustive check over all permutations for n ≤ 8 |
 | 4 | Travelling salesman: heuristic distance from the known optimum on TSPLIB eil51 | Run and verified | Published optimum of 426; tour validity and length recomputed independently |
 | 5 | Optimal stopping: exact threshold for the secretary problem | Run and verified | Exact dynamic programming against 200,000-trial Monte Carlo simulation, fixed seed |
-| 6 | Multi-armed bandits: regret of UCB1, Thompson Sampling, and epsilon-greedy | Registered, not run | Synthetic arms; true best arm known by construction |
-| 7 | Optimal execution: closed-form trajectory against a searched policy, synthetic market | Registered, not run | 100,000 seeded simulated price paths, common random numbers |
-| 8 | Coin systems: conditions under which the greedy algorithm is optimal | Registered, not run | Exact dynamic programming at every amount up to 200 |
-| 9 | Market making: break-even spread in a synthetic informed-flow simulator | Registered, not run | Analytic solution checked against simulation with the informed share known by construction |
-| 10 | Exact SAT counting: scaling of a DPLL counter against brute force | Registered, not run | Counts cross-checked by brute-force enumeration on instances with at most 24 variables |
+| 6 | Multi-armed bandits: regret of UCB1, Thompson Sampling, and epsilon-greedy | Run and verified | Synthetic arms; true best arm known by construction |
+| 7 | Optimal execution: closed-form trajectory against a searched policy, synthetic market | Run and verified | 100,000 seeded simulated price paths, common random numbers |
+| 8 | Coin systems: conditions under which the greedy algorithm is optimal | Run and verified | Exact dynamic programming at every amount up to 200 |
+| 9 | Market making: break-even spread in a synthetic informed-flow simulator | Run and verified | Analytic solution checked against simulation with the informed share known by construction |
+| 10 | Exact SAT counting: scaling of a DPLL counter against brute force | Run and verified | Counts cross-checked by brute-force enumeration on instances with at most 24 variables |
 
 The full registration text for all ten problems is in [PILOT.md](PILOT.md).
 
@@ -90,6 +89,71 @@ at each n (fixed seed 20261103) agreed with the exact value within 1.43
 standard errors or less, inside the registered three-standard-error band.
 The manuscript, the code, and the machine-readable result are in
 [problems/005-optimal-stopping](problems/005-optimal-stopping/).
+
+Problem 6 has been completed. On ten synthetic Bernoulli arms (true
+means 0.05 to 0.95), run on 4 November 2026 over 5,000 pulls and 100
+replications, Thompson Sampling had by far the lowest mean cumulative
+pseudo-regret with fixed means (30.51, against 251.36 for
+epsilon-greedy and 285.43 for UCB1). When the mean vector was reversed
+halfway through, the ordering changed: UCB1 adapted fastest (331.18),
+Thompson Sampling was slower (556.09), and epsilon-greedy, which keeps
+exploiting the former best arm, was worst by a wide margin (1,961.59).
+A second, independently written implementation reproduced both winners
+and every mean regret within three combined standard errors. The
+manuscript, the code, and the machine-readable result are in
+[problems/006-bandits](problems/006-bandits/).
+
+Problem 7 has been completed. In the synthetic Almgren–Chriss market
+registered for this problem, the grid-searched policy did not beat the
+closed-form trajectory on the criterion of expected cost plus a
+variance penalty: the best of 11 power-family trajectories
+(alpha = 2.50), selected on the same 100,000 seeded paths used for the
+comparison, had a criterion value $22,742 above the closed form's
+$1,347,430, against a batch standard error of $482. The run also
+quantifies the restriction to the simple family: its best member's
+criterion value is 1.7 percent above the optimum. The closed form's
+analytic expected cost, variance, and criterion value were confirmed
+by the simulation and by an independent perturbation test of
+optimality. The manuscript, the code, and the machine-readable result
+are in [problems/007-optimal-execution](problems/007-optimal-execution/).
+
+Problem 8 has been completed. Exact dynamic programming at every
+amount up to 200, run on 4 November 2026, shows that the United States,
+euro / sterling, powers-of-two, and Fibonacci denomination systems are
+greedy-optimal over the whole range, while {1, 3, 4} fails at 6,
+{1, 7, 10} at 14, and {1, 10, 25} at 30. In the exhaustive sweep of
+the 1,176 three-coin systems {1, a, b} with 2 ≤ a < b ≤ 50, 349
+systems (29.7 percent) are greedy-optimal up to 200; in about 70
+percent of the failing systems the smallest counterexample is exactly
+twice the middle coin. A breadth-first-search recomputation agreed on
+every amount of every system. The manuscript, the code, and the
+machine-readable result are in
+[problems/008-coin-systems](problems/008-coin-systems/).
+
+Problem 9 has been completed. In the synthetic Glosten–Milgrom
+simulator, the break-even spread is 2·mu·delta, where mu is the
+informed share of flow and delta is the half-distance between the two
+possible values: at the headline case mu = 0.20 and delta = 10, the
+analytic break-even spread is 4.00 and the simulated value over
+1,000,000 arrivals is 4.0270, a difference of 1.38 standard errors.
+All ten swept informed shares from 0.05 to 0.50 pass the registered
+three-standard-error check, and an exact rational enumeration of the
+arrival cells confirms the analytic solution. The manuscript, the
+code, and the machine-readable result are in
+[problems/009-market-making](problems/009-market-making/).
+
+Problem 10 has been completed. A plain DPLL exact counter and complete
+brute-force enumeration produced identical model counts on all 180
+random 3-SAT instances registered for this problem (n from 8 to 24 at
+clause ratio 4.26), verified on 4 November 2026 and independently
+recounted by a second DPLL implementation with a different branching
+rule. The median brute-force time grows by an effective factor of 1.87
+per added variable over this range and the median DPLL time by a
+factor of 1.20; at n = 24 the median DPLL count takes 0.0040 seconds
+against 4.1322 seconds for enumeration. These are small-instance
+measurements, not an asymptotic claim. The manuscript, the code, and
+the machine-readable result are in
+[problems/010-sat-counting](problems/010-sat-counting/).
 
 ## How results are produced and corrected
 

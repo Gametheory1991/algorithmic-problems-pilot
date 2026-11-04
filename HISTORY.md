@@ -33,4 +33,27 @@
 - Problems 6 to 10 remain published as registrations only. No result is claimed
   for them.
 
+## 4 November 2026 — Problems 6, 7, 8, 9 and 10 published
+
+- Problem 6 (multi-armed bandits) was run and verified, and its manuscript,
+  code, and result file were published. Thompson Sampling had the lowest
+  regret with stationary arms; UCB1 had the lowest after an abrupt reversal
+  of the arm means halfway through the run.
+- Problem 7 (optimal execution) was run and verified, and its manuscript,
+  code, and result file were published. The grid-searched policy did not beat
+  the closed-form trajectory; its best member's criterion value was
+  1.7 percent above the optimum.
+- Problem 8 (coin systems) was run and verified, and its manuscript, code,
+  and result file were published. Of the 1,176 three-coin systems swept, 349
+  are greedy-optimal at every amount up to 200.
+- Problem 9 (market making) was run and verified, and its manuscript, code,
+  and result file were published. The break-even spread is 2·mu·delta; all
+  ten swept informed shares matched the analytic solution within simulation
+  error.
+- Problem 10 (exact SAT counting) was run and verified, and its manuscript,
+  code, and result file were published. The DPLL counter's counts agreed
+  with complete brute-force enumeration on all 180 registered instances.
+- All ten registered problems have now been run and verified. No problem
+  remains in registration-only state.
+
 No results have been corrected or withdrawn.
