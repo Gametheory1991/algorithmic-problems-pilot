@@ -1,0 +1,108 @@
+{
+  "J_difference_batch_standard_error": 482.41976385265224,
+  "J_difference_best_grid_minus_closed_form": 22741.9515924793,
+  "best_grid_alpha": 2.5,
+  "closed_form": {
+    "analytic_J": 1345055.457732855,
+    "analytic_expected_cost": 847446.7725443572,
+    "analytic_variance": 497608685188.49786,
+    "simulated_J": 1347430.076299211,
+    "simulated_expected_cost": 849519.9694490915,
+    "simulated_variance": 497910106850.11957,
+    "trades": [
+      250267.78620161128,
+      188751.2968643076,
+      142722.09342356253,
+      108403.42072526354,
+      82979.38767621698,
+      64363.9197698344,
+      51029.59399841254,
+      41882.311837116875,
+      36171.52705732822,
+      33428.66244634599
+    ]
+  },
+  "grid_beats_closed_form": false,
+  "grid_results": [
+    {
+      "alpha": 0.5,
+      "simulated_J": 2688831.250226528,
+      "simulated_expected_cost": 892991.1341472772,
+      "simulated_variance": 1795840116079.2507
+    },
+    {
+      "alpha": 0.75,
+      "simulated_J": 2057969.8667317592,
+      "simulated_expected_cost": 655594.8026754935,
+      "simulated_variance": 1402375064056.2656
+    },
+    {
+      "alpha": 1.0,
+      "simulated_J": 1753493.88866997,
+      "simulated_expected_cost": 614604.7286953572,
+      "simulated_variance": 1138889159974.6128
+    },
+    {
+      "alpha": 1.25,
+      "simulated_J": 1585177.5368019356,
+      "simulated_expected_cost": 634329.5180846173,
+      "simulated_variance": 950848018717.3182
+    },
+    {
+      "alpha": 1.5,
+      "simulated_J": 1484861.5988306587,
+      "simulated_expected_cost": 674743.793211887,
+      "simulated_variance": 810117805618.7717
+    },
+    {
+      "alpha": 1.75,
+      "simulated_J": 1424306.8296784803,
+      "simulated_expected_cost": 723363.1940230727,
+      "simulated_variance": 700943635655.4076
+    },
+    {
+      "alpha": 2.0,
+      "simulated_J": 1389712.3056247975,
+      "simulated_expected_cost": 775848.6200739839,
+      "simulated_variance": 613863685550.8136
+    },
+    {
+      "alpha": 2.25,
+      "simulated_J": 1373291.5438909372,
+      "simulated_expected_cost": 830432.0211788727,
+      "simulated_variance": 542859522712.0647
+    },
+    {
+      "alpha": 2.5,
+      "simulated_J": 1370177.1180438395,
+      "simulated_expected_cost": 886257.0707965139,
+      "simulated_variance": 483920047247.3256
+    },
+    {
+      "alpha": 2.75,
+      "simulated_J": 1377113.3440944469,
+      "simulated_expected_cost": 942845.3156948133,
+      "simulated_variance": 434268028399.63354
+    },
+    {
+      "alpha": 3.0,
+      "simulated_J": 1391819.9019193603,
+      "simulated_expected_cost": 999901.0888424979,
+      "simulated_variance": 391918813076.8623
+    }
+  ],
+  "parameters": {
+    "N": 10,
+    "S0": 100.0,
+    "X": 1000000.0,
+    "eta": 5e-07,
+    "gamma": 2.5e-07,
+    "lambda": 1e-06,
+    "sigma": 2.0,
+    "tau": 0.1
+  },
+  "problem": 7,
+  "title": "Optimal execution - closed form vs grid-searched policy, synthetic Almgren-Chriss market",
+  "verdict": "The grid-searched policy does not beat the closed-form trajectory: the closed form is the exact minimiser of the stated objective, and the best power-family member has a higher simulated J by more than three batch standard errors.",
+  "verifier": "100,000 seeded price paths (seed 20261104), identical shock matrices for every policy (common random numbers); shortfall computed by direct simulation of the price recursion; grid policy selected as the best of 11 power-family members on the same paths; 'beats' requires a J advantage larger than three batch standard errors (100 batches of 1,000 paths)"
+}
