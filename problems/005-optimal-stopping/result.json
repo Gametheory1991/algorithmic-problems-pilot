@@ -1,0 +1,52 @@
+{
+  "problem": 5,
+  "results": [
+    {
+      "absolute_difference": 0.0015704761904762332,
+      "agrees_within_3_standard_errors": true,
+      "difference_in_standard_errors": 1.4344300754984307,
+      "exact_probability": 0.3986904761904762,
+      "exact_probability_fraction": "3349/8400",
+      "monte_carlo_frequency": 0.39712,
+      "monte_carlo_trials": 200000,
+      "monte_carlo_wins": 79424,
+      "n": 10,
+      "observe_first": 3,
+      "optimal_threshold_first_hire_position": 4,
+      "standard_error": 0.001094843323004455
+    },
+    {
+      "absolute_difference": 0.0006200136479201368,
+      "agrees_within_3_standard_errors": true,
+      "difference_in_standard_errors": 0.572966302802865,
+      "exact_probability": 0.37427501364792015,
+      "exact_probability_fraction": "3221930344783839990101/8608456956238879740000",
+      "monte_carlo_frequency": 0.373655,
+      "monte_carlo_trials": 200000,
+      "monte_carlo_wins": 74731,
+      "n": 50,
+      "observe_first": 18,
+      "optimal_threshold_first_hire_position": 19,
+      "standard_error": 0.0010821118884079626
+    },
+    {
+      "absolute_difference": 0.0006977787126430379,
+      "agrees_within_3_standard_errors": true,
+      "difference_in_standard_errors": 0.6459667562698188,
+      "exact_probability": 0.371042778712643,
+      "exact_probability_fraction": "13983373923308456694625973177420433229969/37686689313358095764612869694763407328000",
+      "monte_carlo_frequency": 0.370345,
+      "monte_carlo_trials": 200000,
+      "monte_carlo_wins": 74069,
+      "n": 100,
+      "observe_first": 37,
+      "optimal_threshold_first_hire_position": 38,
+      "standard_error": 0.0010802083944263803
+    }
+  ],
+  "seed": 20261103,
+  "title": "Optimal stopping - prophet / secretary threshold",
+  "trials_per_n": 200000,
+  "verdict": "The exact dynamic program gives a threshold policy at each n, the classical formula maximised over all thresholds reproduces the dynamic-programming value exactly at the same threshold, and the Monte Carlo frequency agrees with the exact value within simulation error at every n.",
+  "verifier": "exact dynamic programming value (rational arithmetic) vs 200,000-trial Monte Carlo simulation per n, fixed seed 20261103; agreement required within three standard errors; dynamic-programming value also checked exactly against the classical threshold formula maximised over all thresholds"
+}
