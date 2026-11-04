@@ -1,0 +1,74 @@
+{
+  "arms_true_means_stationary": [
+    0.05,
+    0.15000000000000002,
+    0.25,
+    0.35000000000000003,
+    0.45,
+    0.55,
+    0.6500000000000001,
+    0.7500000000000001,
+    0.8500000000000001,
+    0.9500000000000001
+  ],
+  "horizon_T": 5000,
+  "problem": 6,
+  "replications_R": 100,
+  "results": [
+    {
+      "algorithm": "UCB1",
+      "max_replication_regret": 365.60000000000684,
+      "mean_cumulative_pseudo_regret": 285.42899999999895,
+      "min_replication_regret": 230.39999999999665,
+      "scenario": "stationary",
+      "standard_error": 2.1682773942894102
+    },
+    {
+      "algorithm": "Thompson Sampling",
+      "max_replication_regret": 93.69999999999904,
+      "mean_cumulative_pseudo_regret": 30.506000000000032,
+      "min_replication_regret": 17.19999999999999,
+      "scenario": "stationary",
+      "standard_error": 0.9893634521266863
+    },
+    {
+      "algorithm": "epsilon-greedy (epsilon=0.1)",
+      "max_replication_regret": 439.8000000000034,
+      "mean_cumulative_pseudo_regret": 251.35899999999975,
+      "min_replication_regret": 208.79999999999993,
+      "scenario": "stationary",
+      "standard_error": 3.907024260963482
+    },
+    {
+      "algorithm": "UCB1",
+      "max_replication_regret": 439.70000000000823,
+      "mean_cumulative_pseudo_regret": 331.1810000000021,
+      "min_replication_regret": 266.30000000000086,
+      "scenario": "non-stationary (means reversed at T/2)",
+      "standard_error": 3.0916974824896797
+    },
+    {
+      "algorithm": "Thompson Sampling",
+      "max_replication_regret": 991.9000000000159,
+      "mean_cumulative_pseudo_regret": 556.0869999999999,
+      "min_replication_regret": 298.20000000000016,
+      "scenario": "non-stationary (means reversed at T/2)",
+      "standard_error": 14.057643713573905
+    },
+    {
+      "algorithm": "epsilon-greedy (epsilon=0.1)",
+      "max_replication_regret": 2252.3000000001,
+      "mean_cumulative_pseudo_regret": 1961.5900000000524,
+      "min_replication_regret": 1362.2000000000096,
+      "scenario": "non-stationary (means reversed at T/2)",
+      "standard_error": 18.354170610189698
+    }
+  ],
+  "title": "Multi-armed bandits - regret race on synthetic arms",
+  "verdict": "In the stationary scenario the lowest mean cumulative pseudo-regret is Thompson Sampling; in the non-stationary scenario it is UCB1. Figures are in results.",
+  "verifier": "fully synthetic seeded Bernoulli arms; cumulative pseudo-regret computed against the known true best arm at each step (means known by construction); T=5000 pulls, R=100 replications per algorithm per scenario; seeds 20261104 + 100000*scenario + 10000*algorithm + replication",
+  "winners": {
+    "non-stationary (means reversed at T/2)": "UCB1",
+    "stationary": "Thompson Sampling"
+  }
+}
