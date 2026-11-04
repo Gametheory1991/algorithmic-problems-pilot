@@ -1,0 +1,127 @@
+{
+  "all_cases_passed": true,
+  "headline_case": {
+    "analytic_breakeven_half_spread": 2.0,
+    "analytic_breakeven_spread": 4.0,
+    "difference_in_standard_errors": 1.3782269697836864,
+    "informed_share_mu": 0.2,
+    "simulated_breakeven_half_spread": 2.0135,
+    "simulated_breakeven_spread": 4.027,
+    "standard_error_of_half_spread": 0.009795193604518493,
+    "verifier_passed": true
+  },
+  "parameters": {
+    "arrivals_per_mu": 1000000,
+    "delta": 10.0,
+    "values": [
+      90.0,
+      110.0
+    ]
+  },
+  "problem": 9,
+  "sweep": [
+    {
+      "analytic_breakeven_half_spread": 0.5,
+      "analytic_breakeven_spread": 1.0,
+      "difference_in_standard_errors": 1.077406263733512,
+      "informed_share_mu": 0.05,
+      "simulated_breakeven_half_spread": 0.51076,
+      "simulated_breakeven_spread": 1.02152,
+      "standard_error_of_half_spread": 0.009986947692984078,
+      "verifier_passed": true
+    },
+    {
+      "analytic_breakeven_half_spread": 1.0,
+      "analytic_breakeven_spread": 2.0,
+      "difference_in_standard_errors": 0.37988981697414764,
+      "informed_share_mu": 0.1,
+      "simulated_breakeven_half_spread": 0.99622,
+      "simulated_breakeven_spread": 1.99244,
+      "standard_error_of_half_spread": 0.009950253550116198,
+      "verifier_passed": true
+    },
+    {
+      "analytic_breakeven_half_spread": 1.5000000000000002,
+      "analytic_breakeven_spread": 3.0000000000000004,
+      "difference_in_standard_errors": 0.8677045915622739,
+      "informed_share_mu": 0.15,
+      "simulated_breakeven_half_spread": 1.49142,
+      "simulated_breakeven_spread": 2.98284,
+      "standard_error_of_half_spread": 0.009888157886259704,
+      "verifier_passed": true
+    },
+    {
+      "analytic_breakeven_half_spread": 2.0,
+      "analytic_breakeven_spread": 4.0,
+      "difference_in_standard_errors": 1.3782269697836864,
+      "informed_share_mu": 0.2,
+      "simulated_breakeven_half_spread": 2.0135,
+      "simulated_breakeven_spread": 4.027,
+      "standard_error_of_half_spread": 0.009795193604518493,
+      "verifier_passed": true
+    },
+    {
+      "analytic_breakeven_half_spread": 2.5,
+      "analytic_breakeven_spread": 5.0,
+      "difference_in_standard_errors": 0.2107017611981073,
+      "informed_share_mu": 0.25,
+      "simulated_breakeven_half_spread": 2.50204,
+      "simulated_breakeven_spread": 5.00408,
+      "standard_error_of_half_spread": 0.009681931410539945,
+      "verifier_passed": true
+    },
+    {
+      "analytic_breakeven_half_spread": 3.0000000000000004,
+      "analytic_breakeven_spread": 6.000000000000001,
+      "difference_in_standard_errors": 1.387325047054961,
+      "informed_share_mu": 0.3,
+      "simulated_breakeven_half_spread": 2.98676,
+      "simulated_breakeven_spread": 5.97352,
+      "standard_error_of_half_spread": 0.009543545709137667,
+      "verifier_passed": true
+    },
+    {
+      "analytic_breakeven_half_spread": 3.5000000000000004,
+      "analytic_breakeven_spread": 7.000000000000001,
+      "difference_in_standard_errors": 0.6278497534548126,
+      "informed_share_mu": 0.35,
+      "simulated_breakeven_half_spread": 3.50588,
+      "simulated_breakeven_spread": 7.01176,
+      "standard_error_of_half_spread": 0.009365297935762643,
+      "verifier_passed": true
+    },
+    {
+      "analytic_breakeven_half_spread": 4.0,
+      "analytic_breakeven_spread": 8.0,
+      "difference_in_standard_errors": 0.3928595858674495,
+      "informed_share_mu": 0.4,
+      "simulated_breakeven_half_spread": 4.0036,
+      "simulated_breakeven_spread": 8.0072,
+      "standard_error_of_half_spread": 0.00916357937926005,
+      "verifier_passed": true
+    },
+    {
+      "analytic_breakeven_half_spread": 4.5,
+      "analytic_breakeven_spread": 9.0,
+      "difference_in_standard_errors": 0.6429650172770722,
+      "informed_share_mu": 0.45,
+      "simulated_breakeven_half_spread": 4.50574,
+      "simulated_breakeven_spread": 9.01148,
+      "standard_error_of_half_spread": 0.008927390831166742,
+      "verifier_passed": true
+    },
+    {
+      "analytic_breakeven_half_spread": 5.0,
+      "analytic_breakeven_spread": 10.0,
+      "difference_in_standard_errors": 0.3809674017063475,
+      "informed_share_mu": 0.5,
+      "simulated_breakeven_half_spread": 4.9967,
+      "simulated_breakeven_spread": 9.9934,
+      "standard_error_of_half_spread": 0.008662158455604469,
+      "verifier_passed": true
+    }
+  ],
+  "title": "Market making - break-even spread in a synthetic Glosten-Milgrom simulator",
+  "verdict": "At the headline informed share mu = 0.20 the break-even spread is 4.00 analytically and 4.027 in simulation, a difference of 1.38 standard errors. Across the sweep the break-even spread is 2 * mu * delta throughout, as the analytic solution states.",
+  "verifier": "break-even half-spread solved analytically (h* = mu * delta) and checked against simulation with the informed share known by construction: 1,000,000 arrivals per mu, seed 20261104; pass requires |simulated - analytic| <= 3 standard errors of the simulated mean"
+}
